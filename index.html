@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATM Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="atm-container">
+    <h2>ATM Login</h2>
+    <form action="ATMServlet" method="post">
+      <input type="hidden" name="action" value="login">
+      <input type="password" name="pin" placeholder="Enter PIN" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p style="color:red;">
+      <% if(request.getParameter("error") != null) out.print("Invalid PIN!"); %>
+    </p>
+  </div>
+</body>
+</html>
